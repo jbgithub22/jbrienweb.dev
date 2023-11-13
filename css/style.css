@@ -54,3 +54,12 @@ color: black;
 background-color: #04AA6D;
 color: white;
 }
+
+.notes {
+    background-color: pink;
+    padding: 10px;
+}
+
+.notes h3{
+    margin: 0px;
+}
