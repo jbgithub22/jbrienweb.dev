@@ -20,6 +20,7 @@ Hi! This is my practice zone for web development, cloud engineering and devops.
 5. Photography portfolio website.
 6. Some machine learning/pytorch project.
 7. Some data viz project from Singapore Gov's data APIs.
+8. Chat App.
 
 ### Cloud Engineering
 1. Learn more on the capabilities of AWS EC2 and the industry workflows around it.

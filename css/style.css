@@ -55,6 +55,10 @@ img{
     padding: 10px;
 }
 
+.notes p {
+    margin:0;
+}
+
 .notes h3{
     margin: 0px;
 }
