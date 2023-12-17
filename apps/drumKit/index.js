@@ -1,6 +1,4 @@
 
-var drumButtons = document.querySelectorAll(".drum")
-var numberOfDrums = drumButtons.length
 
 function handleClick(key) {
     switch (key) {
@@ -45,23 +43,46 @@ function handleClick(key) {
     }
 }
 
+// function buttonAnimation(currentKey) {
+//     var activeButton = document.querySelector("." + currentKey)
+//     activeButton.classList.add("pressed");
+//     setTimeout(function() {
+//         activeButton.classList.remove("pressed")
+//     }, 100);
+// }
+
+
 function buttonAnimation(currentKey) {
-    var activeButton = document.querySelector("." + currentKey)
-    activeButton.classList.add("pressed");
+    var activeButton = $("." + currentKey);
+    activeButton.addClass("pressed");
     setTimeout(function() {
-        activeButton.classList.remove("pressed")
+        activeButton.removeClass("pressed")
     }, 100);
 }
 
-for (var i = 0; i < numberOfDrums; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-        var buttonInnerHTML = this.innerHTML;
-        handleClick(buttonInnerHTML);
-        buttonAnimation(buttonInnerHTML);
-    } );
-}
+// var drumButtons = $(".drum")
+// var numberOfDrums = drumButtons.length
 
-document.addEventListener("keydown", function(event) {
+// for (var i = 0; i < numberOfDrums; i++) {
+//     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+//         var buttonInnerHTML = this.innerHTML;
+//         handleClick(buttonInnerHTML);
+//         buttonAnimation(buttonInnerHTML);
+//     } );
+// }
+
+$("button").click(function() {
+    var buttonInnerHTML = this.innerHTML;
+    handleClick(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+})
+
+// document.addEventListener("keydown", function(event) {
+//     handleClick(event.key);
+//     buttonAnimation(event.key);
+// })
+
+$(document).keydown(function(event) {
     handleClick(event.key);
     buttonAnimation(event.key);
 })
