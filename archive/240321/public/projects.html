@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBrien WebDev Practice Site - Projects</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3941918273839664" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main">
+            <div class="header">
+                <button class="menu-toggle">&#9776;</button>
+                <h1>JBrien's WebDev Practice Site</h1>
+                <div class="nav-container">
+                    <div class="topnav">
+                        <a class="active" href="../../index.html">Home</a>
+                        <a href="https://github.com/jbgithub22">Github</a>
+                        <a href="https://jbtekblog.wordpress.com">Tek Blog</a>
+                        <a href="./about.html">About</a>
+                        <a href="https://www.youtube.com/channel/UCsO3xRWhQlghJ5kTF0qvlGw">Travel Blog</a>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <hr />
+
+        <div class="project-page">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Embedded Game</h3>
+                <p>A fun embedded game reminiscent of the classic flash games.</p>
+                <!-- Additional project details or links can be added here -->
+            </div>
+
+            <div class="project">
+                <h3>Wikipedia Web Scraper</h3>
+                <p>A web scraper for retrieving information from Wikipedia.</p>
+                <!-- Additional project details or links can be added here -->
+            </div>
+
+            <div class="project">
+                <h3><a href="./dataAnalytics.html">Data Analytics</a></h3>
+                <p>Playing with visualization and data cleaning.</p>
+                <!-- Additional project details or links can be added here -->
+            </div>
+
+            <div class="project">
+                <h3>Machine Learning Project</h3>
+                <p>Exploring machine learning concepts for a yet-to-be-determined project.</p>
+                <!-- Additional project details or links can be added here -->
+            </div>
+
+            <div class="project">
+                <h3>Schedule Visualizer</h3>
+                <p>Tool to visualize schedules and resolve conflicts.</p>
+                <!-- Additional project details or links can be added here -->
+            </div>
+        </div>
+        <hr />
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navLinks = document.querySelector('.topnav');
+
+            menuToggle.addEventListener('click', function () {
+                navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>

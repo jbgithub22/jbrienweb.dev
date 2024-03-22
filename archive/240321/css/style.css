@@ -1,0 +1,178 @@
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 5px;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.header {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.nav-container {
+    display: none;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topnav {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topnav a {
+        display: block;
+        width: 90%;
+        padding: 10px 10px;
+        text-decoration: none;
+        color: #333;
+        background-color: #eee;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav a:hover {
+        background-color: #3498db;
+        color: #fff;
+    }
+
+    .nav-container {
+        display: block; /* Hide the navigation links container initially on small screens */
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .menu-toggle {
+        display: none; /* Hide the hamburger icon on larger screens */
+    }
+
+    .topnav a {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        background-color: #eee;
+        margin-bottom: 10px; /* Add margin-bottom to create space between buttons */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+        display: block; /* Ensure the navigation links are initially visible on larger screens */
+    }
+}
+
+.topnav {
+    margin-top: 20px;
+}
+
+.topnav a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    margin-bottom: 10px; /* Add margin-bottom to create space between buttons */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topnav a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+li {
+    margin: 10px 0px 10px 0px;
+}
+
+.notes,
+.post,
+.feedback-form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.project {
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+
+hr {
+    border: 1px solid #3498db;
+    margin-top: 20px;
+}
+
