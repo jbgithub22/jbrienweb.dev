@@ -10,6 +10,14 @@ p {
     padding: 0;
 }
 
+a:link {
+    color: #000000;
+}
+
+a:visited a:hover {
+    color: #4f4f4f;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -193,7 +201,7 @@ label {
 
 button {
     padding: 10px 15px;
-    background-color: #3498db;
+    background-color: #4a4949;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -206,7 +214,7 @@ button:hover {
 }
 
 hr {
-    border: 1px solid #3498db;
+    border: 1px solid #b8b8b8;
 }
 
 
