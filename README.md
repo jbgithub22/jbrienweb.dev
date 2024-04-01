@@ -8,7 +8,7 @@ Hi! This is my practice zone for web development, cloud engineering and devops.
 1. Domain purchased from Namecheap.com.
 2. Hosting is on an AWS EC2 Ubuntu Instance running Apache2.
 3. I use VSCode and Github for version control.
-4. Deployment from Github to the EC2 server is currently manual: I download the repo from inside the server. The website was previously auto-deployed via webhook when it was in Hostinger, but I was having issues with SSH credentials. Still under troubleshooting.
+4. Deployment with github actions CI/CD: On git push command on VSCode, Github actions automatically update files on the AWS EC2 server. Changes to website are reflected as per DNS propagation update duration.
 
 ## Project Pipeline
 
