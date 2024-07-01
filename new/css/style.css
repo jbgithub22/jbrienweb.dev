@@ -29,7 +29,7 @@ body {
 
 .header {
     grid-area: header;
-    padding: 150px;
+    padding: 150px 0px 150px 0px;
     height: 300px;
     display: flex;
     justify-content: center;
@@ -44,6 +44,9 @@ body {
     grid-area: menu;
     padding: 0px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background-color: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
@@ -52,6 +55,71 @@ body {
 .glass-button:hover {
     background-color: rgba(255,255,255,0.2);
   }
+
+@media only screen and (min-width: 601px) {
+    .menu-toggle {
+        display: none; /* Hide the hamburger icon on larger screens */
+    }
+
+    .topnav a {
+        display: inline-block;
+        padding: 10px 10px;
+        border: 0;
+        text-decoration: none;
+        background-color: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(30px);
+        color: rgba(255,255,255,0.8);
+        font-size: 14px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .nav-container {
+        display: block; /* Ensure the navigation links are initially visible on larger screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topnav {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topnav a {
+        display: block;
+        width: 90%;
+        padding: 10px 10px;
+        text-decoration: none;
+        color: #333;
+        background-color: #eee;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav a:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    .nav-container {
+        display: block; /* Hide the navigation links container initially on small screens */
+    }
+}
 
 .about {
     grid-area: about;
@@ -94,6 +162,7 @@ body {
     padding: 150px 50px 150px 50px;
     text-align: center;
     border-radius: 10px;
+    
 }
 
 .portfolios {
@@ -133,7 +202,9 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     margin: 5px; /* Added margin for spacing between icons */
 }
