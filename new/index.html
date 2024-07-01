@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="three.r134.min.js"></script>
-    <script src="vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@R134/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.23/dist/vanta.net.min.js"></script>
 </head>
 <body>
-    <div class="header" id="header">
+    <div class="header" id="animated_bg">
         <h1>Welcome to jbrienweb.dev</h1>
     </div>
     <div class="menu">
@@ -106,7 +106,7 @@
 /* Animated Background https://www.vantajs.com/?effect=net */
     <script>
         VANTA.NET({
-            el: "#header",
+            el: "animated_bg",
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
