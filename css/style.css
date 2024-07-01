@@ -56,6 +56,11 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.dark {
+    background-color: rgba(17, 17, 17, 0.5);
+    backdrop-filter: blur(10px);
+}
+
 .glass-button:hover {
     background-color: rgba(255,255,255,0.2);
   }
@@ -70,7 +75,6 @@ body {
         padding: 10px 10px;
         border: 0;
         text-decoration: none;
-        background-color: rgba(255,255,255,0.1);
 
         backdrop-filter: blur(30px);
         color: rgba(255,255,255,0.8);
@@ -198,6 +202,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.copyright {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 50px;
+    align-items: center;
+}
+
+.copyright p {
+    padding: 0px 20px;
+}
+
 
 .title {
     text-align: center;
