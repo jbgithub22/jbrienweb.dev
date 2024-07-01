@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Cards on Hover</title>
+    <style>
+        /* Basic CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container styles */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Card styles */
+        .card {
+            width: 200px;
+            height: 250px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, width 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Content styles */
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Hover effect */
+        .card:hover {
+            transform: scale(1.1); /* Scale the hovered card */
+            width: 250px; /* Expand the width of the hovered card */
+        }
+
+        /* Make other cards shrink */
+        .card:not(:hover) {
+            transform: scale(0.9); /* Shrink the other cards */
+            width: 150px; /* Narrow the width of the other cards */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card" id="card1">
+        <div class="card-content">
+            <h2>Card 1</h2>
+            <p>This is the content of Card 1.</p>
+        </div>
+    </div>
+    <div class="card" id="card2">
+        <div class="card-content">
+            <h2>Card 2</h2>
+            <p>This is the content of Card 2.</p>
+        </div>
+    </div>
+    <div class="card" id="card3">
+        <div class="card-content">
+            <h2>Card 3</h2>
+            <p>This is the content of Card 3.</p>
+        </div>
+    </div>
+    <div class="card" id="card4">
+        <div class="card-content">
+            <h2>Card 4</h2>
+            <p>This is the content of Card 4.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

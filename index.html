@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <title>JBrien WebDev Practice Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JbrienWeb.Dev'</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3941918273839664"
-     crossorigin="anonymous"></script>
-    <style>
-        .project {
-            background-color: #ffffff;
-        }
-    </style>
 </head>
-
 <body>
-    <div class="main">
-        <div class="main">
-            <div class="header">
+    <section>
+        <div class="header" id="animated_bg">
+            <h1>Welcome to JbrienWeb.Dev</h1>
+        </div>
+    </section>
+
+    <section class = "glass">
+        <div class="menu">
+            <div>
                 <button class="menu-toggle">&#9776;</button>
-                <h1>JBrien's WebDev Practice Site</h1>
                 <div class="nav-container">
                     <div class="topnav">
                         <a class="active" href="./index.html">Home</a>
@@ -29,93 +24,117 @@
                         <a href="https://jbtekblog.wordpress.com">Tek Blog</a>
                         <a href="./public/projects.html">Projects</a>
                         <a href="./public/about.html">About</a>
-                        <a href="https://www.youtube.com/channel/UCsO3xRWhQlghJ5kTF0qvlGw">Travel Blog</a>
+                        <a href="./public/change_log.html">Change Log</a>
                     </div>
                 </div>
             </div>
-        <hr />
-        <div>
-            <h3>A few notes on what is happening here: </h3>
-            <ul>
-                <li><a href="./new/index.html">New website under construction!</a></li>
-                <li>This webpage is being hosted on Github Pages with a domain name purchased on Namecheap.</li>
-                <li>I do my coding on VSCode and use Github for version control.</li>
-                <li>More details can be found on my <a href="https://jbtekblog.wordpress.com/2023/11/12/web-hosting-web-development/">tech blog</a> and <a href="https://github.com/jbgithub22">github page</a>.</li>
-                <li>The course I'm taking for web development is <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/">Angela Yu's The Complete 2023 Web Development Bootcamp</a></li>
-            </ul>
-            <p>28 June 2024</p>
         </div>
-        <hr />
-        <div>
-            <h3><a href="./public/projects.html">Projects:</a></h3>
-                <div class="project">
-                    <h4><a href="./public/projects.html">Data Visualzation & Analytics</a></h4>
-                    <p>Data Analytics done in Tableau, PowerBI, Python & R.</p>
-                </div>
-                <div class="project">
-                    <h4>SWE Salary Predictor</h4>
-                    <p>Python, Streamlit, Pandas, Numpy, and Scikit-Learn Project. To be hosted together with this website in an AWS EC2 Ubuntu-Apache server. Project made following a youtube tutorial.</p>
-                </div>
-                <div class="project">
-                    <h4><a href="https://opensea.io/collection/jb-barcoma-sketchbook">NFT Art</a></h4>
-                    <p>Created my own NFTs in OpenSEA with the Ethereum network to experience crypto and blockchain first-hand.</p>
-                </div>
-                <div class="project">
-                    <h4><a href="./public/projects.html">Future Projects Wishlist</a></h4>
-                    <ul>
-                        <li>An embedded game, similar to flash games of the old days.</li>
-                        <li>A wikipedia web scraper.</li>
-                        <li>Something to do with machine learning, not sure what yet.</li>
-                        <li>A schedule visualizer, so schedule conflicts can be resolved.</li>
-                        <li><a href="./apps/drumKit/index.html">A javascript drum kit.</a></li>
-                    </ul>
-                </div>
-        </div>
-        <hr />
-
-        <div>
-            <h3>Website Archive:</h3>
-            <div class="post">
-                <a href="./public/change_log.html">Change Log</a>
-                <ul>
-                    <li><a href="./archive/231116/index.html">v1.1 - 16 November 2023</a></li>
-                    <li><a href="./archive/240321/index.html">v1.2 - 21 March 2024</a></li>
-                </ul>
+    </section>
+    
+    <section>
+        <div class="about">
+            <div class="about-me-content">
+                <h2>About Me</h2>
+                <p>My name is JBrien Barcoma.</p>
+                <p>Designer and Maker with a focus on Data Science & Analytics. Experienced in Architectural Design, Project & Operations Management and Biotech & Aerospace Manufacturing.</p>
+            </div>
+            <div class="about-me-photo">
+                <img src="https://i.pinimg.com/736x/f8/d0/a1/f8d0a1638009e4e11d350cc4fb75e855.jpg" alt="Profile Photo">
             </div>
         </div>
+    </section>
 
-        <div class="feedback-form">
-            <h2>Feedback Form</h2>
-            <form id="feedbackForm" action="/submit-feedback" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Feedback:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Submit Feedback</button>
-            </form>
+    <section class = "glass">
+        <div class="projects ">
+            <div class="title">
+                <h3>Selected Projects</h3>
+            </div>
+            <div class="subContainer">
+                <div class="icon">
+                    <h4>Project 1</h4>
+                </div>
+                <div class="icon">
+                    <h4>Project 2</h4>
+                </div>
+                <div class="icon">
+                    <h4>Project 3</h4>
+                </div>
+                <div class="icon">
+                    <h4>Project 4</h4>
+                </div>
+            </div>
+            <div class="extras">
+                <div class="icon">
+                    <h4>Full List of Projects</h4>
+                </div>
+            </div>
         </div>
-
-        <div>
-            <h3 style= "text-align: center">
-                <a href="./public/about.html">About Me</a>
-                <a href="./public/contact.html">Contact</a>
-            </h3>
-        </div>
-    </div>    
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuToggle = document.querySelector('.menu-toggle');
-            var navLinks = document.querySelector('.topnav');
+    </section>
     
-            menuToggle.addEventListener('click', function () {
-                navLinks.style.display = navLinks.style.display === 'none' ? 'block' : 'none';
-            });
+    <section>
+        <div class="portfolios">
+            <div class="title">
+                <h3>My Other Portfolio Websites</h3>
+            </div>
+            <div class="subContainer">
+                <div class="icon">
+                    <h4>Maker Portfolio</h4>
+                </div>
+                <div class="icon">
+                    <h4>Travel & Photography Portfolio</h4>
+                </div>
+                <div class="icon">
+                    <h4>Architecture & Design Portfolio</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class = "glass">
+        <div class="updates">
+            <div class="title">
+                <h3>Blog & Updates</h3>
+            </div>
+            <div class="subContainer">
+                <div class="icon">
+                    <h4>Update 1</h4>
+                </div>
+                <div class="icon">
+                    <h4>Update 2</h4>
+                </div>
+                <div class="icon">
+                    <h4>Update 3</h4>
+                </div>
+                <div class="icon">
+                    <h4>Update 4</h4>
+                </div>
+                <div class="icon">
+                    <h4>Update 5</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="footer">
+            <h3>Feedback & Contact Me</h3>
+        </div>
+    </section>
+
+
+<!-- Animated Background https://www.vantajs.com/?effect=net -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#animated_bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
         });
     </script>
 </body>

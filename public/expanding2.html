@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Cards with Fixed Sides on Hover</title>
+    <style>
+        /* Basic CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container styles */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative; /* Ensure the container can position the pseudo-elements */
+        }
+
+        /* Card styles */
+        .card {
+            width: 200px;
+            height: 250px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, width 0.3s ease;
+            overflow: hidden;
+            position: relative; /* Ensure the card can position the pseudo-elements */
+        }
+
+        /* Content styles */
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Left and right pseudo-elements for the fixed sides */
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 20px; /* Width of the fixed sides */
+            background-color: inherit; /* Inherit background color from parent */
+            z-index: -1; /* Behind the card content */
+            transition: width 0.3s ease; /* Transition for width change */
+        }
+
+        /* Left pseudo-element */
+        .card::before {
+            left: -20px; /* Position on the left side */
+        }
+
+        /* Right pseudo-element */
+        .card::after {
+            right: -20px; /* Position on the right side */
+        }
+
+        /* Hover effect */
+        .card:hover {
+            transform: scale(1.1); /* Scale the hovered card */
+            width: 250px; /* Expand the width of the hovered card */
+        }
+
+        /* Adjust left and right pseudo-elements on hover */
+        .card:hover::before,
+        .card:hover::after {
+            width: 0; /* Shrink the fixed sides to zero width */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card" id="card1">
+        <div class="card-content">
+            <h2>Card 1</h2>
+            <p>This is the content of Card 1.</p>
+        </div>
+    </div>
+    <div class="card" id="card2">
+        <div class="card-content">
+            <h2>Card 2</h2>
+            <p>This is the content of Card 2.</p>
+        </div>
+    </div>
+    <div class="card" id="card3">
+        <div class="card-content">
+            <h2>Card 3</h2>
+            <p>This is the content of Card 3.</p>
+        </div>
+    </div>
+    <div class="card" id="card4">
+        <div class="card-content">
+            <h2>Card 4</h2>
+            <p>This is the content of Card 4.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
