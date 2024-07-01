@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructables-like Article</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #2e2e2e;
+        }
+        header p {
+            font-size: 1em;
+            color: #888;
+        }
+        article h2 {
+            font-size: 2em;
+            margin-top: 30px;
+            color: #2e2e2e;
+        }
+        article p, article ol, article ul {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+        .step {
+            border: 1px solid #e5e5e5;
+            padding: 20px;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #888;
+            border-top: 2px solid #e5e5e5;
+        }
+        .footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Title of the Project</h1>
+            <p>Author Name · Date</p>
+        </header>
+        <article>
+            <h2>Introduction</h2>
+            <p>Brief introduction to the project, its goals, and any necessary background information.</p>
+            <div class="step">
+                <h2>Step 1: Prepare Your Materials</h2>
+                <p>List all the materials and tools you will need for this project.</p>
+                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+            </div>
+            <div class="step">
+                <h2>Step 2: Start Building</h2>
+                <p>Detailed instructions on the first phase of the project. Use bullet points or numbered lists for clarity.</p>
+                <ul>
+                    <li>First action</li>
+                    <li>Second action</li>
+                    <li>Third action</li>
+                </ul>
+                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+            </div>
+            <div class="step">
+                <h2>Step 3: Finish Up</h2>
+                <p>Final steps to complete the project, including any finishing touches or tips for better results.</p>
+                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+            </div>
+            <h2>Conclusion</h2>
+            <p>Summarize the project, discuss any challenges, and provide suggestions for future improvements or variations.</p>
+        </article>
+        <div class="footer">
+            <p>Written by <a href="#">Author Name</a></p>
+            <p><a href="#">Back to top</a></p>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.footer a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

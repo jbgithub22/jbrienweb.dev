@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchDaily-like Article</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #2e2e2e;
+        }
+        header p {
+            font-size: 1em;
+            color: #888;
+        }
+        article h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #2e2e2e;
+        }
+        article p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #888;
+            border-top: 2px solid #e5e5e5;
+        }
+        .footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Title of the Project</h1>
+            <p>Author Name · Date</p>
+        </header>
+        <article>
+            <h2>Project Overview</h2>
+            <p>A brief overview of the project, including its goals, location, and any relevant background information.</p>
+            <img src="https://via.placeholder.com/1200x600" alt="Placeholder Image">
+            <h2>Design Concept</h2>
+            <p>Detailed description of the design concept, including inspiration, key features, and unique elements.</p>
+            <img src="https://via.placeholder.com/1200x600" alt="Placeholder Image">
+            <h2>Architectural Drawings</h2>
+            <p>Showcase architectural drawings, plans, and sections to give readers a comprehensive understanding of the project.</p>
+            <img src="https://via.placeholder.com/1200x600" alt="Placeholder Image">
+            <h2>Conclusion</h2>
+            <p>Summarize the project, discussing its impact, challenges faced, and final outcomes.</p>
+        </article>
+        <div class="footer">
+            <p>Written by <a href="#">Author Name</a></p>
+            <p><a href="#">Back to top</a></p>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.footer a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
