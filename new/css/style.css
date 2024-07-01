@@ -34,9 +34,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /*
     background-image: url('../bg_image/bg_image.jpg');
     background-size: cover;
     background-position: center;
+    */
 }
 
 /*<a href="https://www.vecteezy.com/free-vector/website-header">Website Header Vectors by Vecteezy</a> */
