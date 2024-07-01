@@ -75,8 +75,6 @@ body {
         padding: 10px 10px;
         border: 0;
         text-decoration: none;
-
-        backdrop-filter: blur(30px);
         color: rgba(255,255,255,0.8);
         font-size: 14px;
         letter-spacing: 2px;
@@ -235,6 +233,9 @@ body {
     align-items: center;
     border-radius: 5px;
     margin: 5px; /* Added margin for spacing between icons */
+
+    flex: 1;
+    transition: flex 0.4s ease-in-out;
 }
 
 .portfolios .icon {
@@ -245,22 +246,20 @@ body {
     height: 20px;
 }
 
+.icon.active {
+    flex: 5;
+}
+
 /* Grid Cotnainers */
 
 .projects .subContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    display: flex;
 }
 
 .portfolios .subContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
 }
 
 .updates .subContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    display: flex;
 }

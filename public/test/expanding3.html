@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Basic CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .topic {
+
+        }
+
+        .container {
+            display: flex;
+            gap: 10px;
+            margin: 50px;
+        }
+
+        .panel {
+            background-color: lightblue;
+            width: 150px;
+            height: 300px;
+            flex: 1;
+            transition: flex 0.4s ease-in-out;
+        }
+
+        .panel.active {
+            flex: 5;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="header">
+            <h1>Expanding Div Test Page</h1>
+            <p>https://www.youtube.com/watch?v=p_2ByC1BJaU</p>
+        </div>
+    </section>
+    <section class="topic">
+        <div class="container">
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+        </div>
+    </section>
+
+    <script>
+        const panels = document.querySelectorAll(".panel");
+
+        panels.forEach((panel) => {
+            panel.addEventListener("mouseover", () => {
+                removeActiveClasses();
+                panel.classList.add("active");
+            });
+
+            panel.addEventListener("mouseleave", () => {
+                removeActiveClasses();
+            });
+        });
+
+        const removeActiveClasses = () => {
+            panels.forEach((panel) => {
+                panel.classList.remove("active");
+            });
+        };
+    </script>
+</body>
+</html>
