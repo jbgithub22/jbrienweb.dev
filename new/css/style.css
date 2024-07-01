@@ -48,8 +48,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.glass {
     background-color: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
 }
 
@@ -163,7 +165,6 @@ body {
     grid-area: projects;
     padding: 150px 50px 150px 50px;
     text-align: center;
-    border-radius: 10px;
     
 }
 
@@ -171,14 +172,12 @@ body {
     grid-area: portfolios;
     padding: 150px 50px 150px 50px;
     text-align: center;
-    border-radius: 10px;
 }
 
 .updates {
     grid-area: updates;
     padding: 150px 50px 150px 50px;
     text-align: center;
-    border-radius: 10px;
 }
 
 .footer {
@@ -192,7 +191,6 @@ body {
 
 .title {
     text-align: center;
-    border-radius: 10px;
 }
 
 /* Icons */
