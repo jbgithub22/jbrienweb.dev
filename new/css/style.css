@@ -26,6 +26,7 @@ body {
       radial-gradient(ellipse at 10% 10%, #35244f 0%, transparent 55%);
 }
 
+
 .header {
     grid-area: header;
     padding: 150px 0px 150px 0px;
@@ -70,7 +71,7 @@ body {
         border: 0;
         text-decoration: none;
         background-color: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.1);
+
         backdrop-filter: blur(30px);
         color: rgba(255,255,255,0.8);
         font-size: 14px;
@@ -127,6 +128,7 @@ body {
 .about {
     grid-area: about;
     padding: 150px 50px;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,6 +166,8 @@ body {
 .projects {
     grid-area: projects;
     padding: 150px 50px 150px 50px;
+    max-width: 600px;
+    margin: auto;
     text-align: center;
     
 }
@@ -171,18 +175,24 @@ body {
 .portfolios {
     grid-area: portfolios;
     padding: 150px 50px 150px 50px;
+    max-width: 600px;
+    margin: auto;
     text-align: center;
 }
 
 .updates {
     grid-area: updates;
     padding: 150px 50px 150px 50px;
+    max-width: 600px;
+    margin: auto;
     text-align: center;
 }
 
 .footer {
     grid-area: footer;
     padding: 150px 50px 150px 50px;
+    max-width: 600px;
+    margin: auto;
     height: 300px;
     display: flex;
     justify-content: center;
