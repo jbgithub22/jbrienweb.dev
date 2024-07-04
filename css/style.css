@@ -26,6 +26,10 @@ body {
       radial-gradient(ellipse at 10% 10%, #35244f 0%, transparent 55%);
 }
 
+a:link {
+    color: white;
+}
+
 
 .header {
     grid-area: header;
