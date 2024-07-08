@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-like Article</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 10px;
+            padding: 10px;
+            background-color: #888;
+            color: #333;
+        }
+        .paper {
+            background-color: #ffffff;
+            margin: 0 auto;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #888;
+        }
+        article h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        article p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #ddd;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #888;
+        }
+        .footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            position: fixed;
+            right: 0;
+            top: 100px;
+            width: 200px;
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        .toc.open {
+            transform: translateX(0);
+        }
+        .toc h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc ul li {
+            margin-bottom: 10px;
+        }
+        .toc ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+        .toggle-button {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: rotate(-90deg) translateX(-31%);
+            transform-origin: left center;
+            background: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+            text-align: center;
+        }
+        .toc-content {
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section class="paper">
+        <div class="container">
+            <header>
+                <h1>Title of the Article</h1>
+                <p>Author Name · Date</p>
+            </header>
+            <article>
+                <h2 id="subheading1">Subheading 1</h2>
+                <p>This is a paragraph of text that looks like something you would find in a Medium article. It is well-spaced, easy to read, and keeps the reader engaged.</p>
+                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+                <h2 id="subheading2">Subheading 2</h2>
+                <p>Another paragraph of text with more information, stories, or data. You can add images, quotes, and other content to make the article more interesting.</p>
+                <div class="quote">
+                    "This is a quote that stands out from the rest of the text. It is styled differently to catch the reader's attention."
+                </div>
+                <h2 id="subheading3">Subheading 3</h2>
+                <p>More content goes here. You can write as much as you need, and the styling will keep it looking clean and readable.</p>
+            </article>
+            <div class="footer">
+                <p>Written by <a href="#">Author Name</a></p>
+                <p><a href="#">Back to top</a></p>
+            </div>
+        </div>
+        <div class="toc" id="toc">
+            <span class="toggle-button" id="toggle-button">
+                <h4 style="padding:0px; margin: 0px;">Table of Contents</h4>
+            </span>
+            <div class="toc-content">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#subheading1">Subheading 1</a></li>
+                    <li><a href="#subheading2">Subheading 2</a></li>
+                    <li><a href="#subheading3">Subheading 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelector('.footer a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const toggleButton = document.getElementById('toggle-button');
+        const toc = document.getElementById('toc');
+
+        toggleButton.addEventListener('click', function() {
+            toc.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

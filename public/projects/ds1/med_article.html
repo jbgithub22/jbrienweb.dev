@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-like Article</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 10px;
+            padding: 10px;
+            background-color: #888;
+            color: #333;
+        }
+        .paper {
+            background-color: #ffffff;
+            margin: 0 auto;
+            padding: 50px;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 px;
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #888;
+        }
+        article h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        article p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        article img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #ddd;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #888;
+        }
+        .footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            position: fixed;
+            right: 0;
+            top: 100px;
+            width: 200px;
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        .toc.open {
+            transform: translateX(0);
+        }
+        .toc h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .toc ul li {
+            margin-bottom: 10px;
+        }
+        .toc ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+        .toggle-button {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: rotate(-90deg) translateX(-31%);
+            transform-origin: left center;
+            background: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+            text-align: center;
+        }
+        .toc-content {
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section class="paper">
+        <div class="container">
+            <header>
+                <h1>Analyzing Coffee Sales: Insights from Vending Machine Dataset</h1>
+                <p>JBrien Barcoma · 8 Jul 2024</p>
+            </header>
+            <section>
+                <div class="toc" id="toc">
+                    <span class="toggle-button" id="toggle-button">
+                        <h4 style="padding:0px; margin: 0px;">Table of Contents</h4>
+                    </span>
+                    <div class="toc-content">
+                        <h3>Contents</h3>
+                        <ul>
+                            <li><a href="#subheading1">Subheading 1</a></li>
+                            <li><a href="#subheading2">Subheading 2</a></li>
+                            <li><a href="#subheading3">Subheading 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <article>
+                <h2>1 Introduction</h2>
+                <p>This dataset contains daily transaction data from a coffee vending machine from March 2024 to June 2024. 
+                    In this article, we want to do an exploratory data analysis of the dataset, 
+                    and make use of each variable identify customer behaviours and trends.
+                </p>
+
+                <p>Exploring deeper, we will bring in other datasets which can shed light on the trends and behaviours observed.
+                    Thereafter we will conclude by using Machine Learning and ChatGPT to assist us in making predictions for future trends.
+                </p>
+                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+
+                <h2>2 The Dataset</h2>
+                    <p>The dataset consists of 6 columns, ## rows</p>
+                    <div class="quote">
+                        "This is a quote that stands out from the rest of the text. It is styled differently to catch the reader's attention."
+                    </div>
+                    
+                    <h3>2.1 Data Warehousing</h3>
+                    <h3>2.2 Extract/Load/Transform (ETL) Pipeline</h3>
+
+
+                <h2>3 Initial Data Exploration</h2>
+                <p>In this section, we will use only the variables available to us in the dataset to make insights.</p>
+
+                    <h3>3.1 Date & Datetime Variable</h3>
+
+                        <h4>3.1.1 Is there a sale everyday?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+
+                        <h4>3.1.2 How are sales on weekdays vs weekends?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+
+                        <h4>3.1.3 Which time of day are there most sales?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+
+                    <h3>3.2 Payment Modes</h3>
+
+                        <h4>3.1.1 Is there a sale everyday?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+        
+                    <h3>3.3 Spending Habits</h3>
+
+                        <h4>3.1.1 Is there a sale everyday?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+
+                    <h3>3.4 Coffee Type Sales Trends</h3>
+
+                        <h4>3.1.1 Is there a sale everyday?</h4>
+                            <div style="display:block;">
+                                <div style="max-width:800px; max-height: 400px; background-color: rgb(196, 196, 196); ">
+                                    <div style="padding: 25% 0 25% 0; width: 100%; text-align: center;">
+                                        <h3 style="color:#888">800 x 400</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                                aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                                pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                                sed nisi lacus sed viverra tellus in hac habitasse</p>
+                    
+                    <h3>3.5 Initial Data Analysis Conclusion</h3>
+                        <p>Vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis 
+                            aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor 
+                            pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse 
+                            sed nisi lacus sed viverra tellus in hac habitasse</p>
+
+                <h2>4 External Datasets</h2>
+                    <h3>4.1 Data Warehousing & Schema</h3>
+                    <h3>4.2 Extract/Load/Transform (ETL) Pipeline</h3>
+
+                <h2>5 ChatGPT Assist</h2>
+                    <h3>5.1 Prompt Engineering</h3>
+                    <h3>5.2 Response Verification</h3>
+
+                <h2>6 Machine Learning</h2>
+
+                <h2>7 Conclusion</h2>
+
+                <h2>8 References</h2>
+
+            </article>
+            <div class="footer">
+                <p>Written by <a href="#">JBrien Barcoma</a></p>
+                <p><a href="#">Back to top</a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelector('.footer a').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /*TOC Button*/
+        const toggleButton = document.getElementById('toggle-button');
+        const toc = document.getElementById('toc');
+
+        toggleButton.addEventListener('click', function() {
+            toc.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
