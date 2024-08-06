@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article with Table of Contents</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="prevBtn">Previous</a></li>
+                <li>
+                    <select id="toc">
+                        <option value="section1">Introduction</option>
+                        <option value="section2">Section 1</option>
+                        <option value="section3">Section 2</option>
+                        <option value="section4">Conclusion</option>
+                    </select>
+                </li>
+                <li><a href="#" id="nextBtn">Next</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="section1">
+            <h2>Introduction</h2>
+            <p>This is the introduction section.</p>
+        </section>
+        <section id="section2">
+            <h2>Section 1</h2>
+            <p>This is the first section.</p>
+        </section>
+        <section id="section3">
+            <h2>Section 2</h2>
+            <p>This is the second section.</p>
+        </section>
+        <section id="section4">
+            <h2>Conclusion</h2>
+            <p>This is the conclusion section.</p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("main section");
+            const toc = document.getElementById("toc");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+
+            toc.addEventListener("change", function () {
+                const selectedSection = document.getElementById(this.value);
+                window.scrollTo({
+                    top: selectedSection.offsetTop,
+                    behavior: "smooth"
+                });
+            });
+
+            prevBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                changeSection(-1);
+            });
+
+            nextBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                changeSection(1);
+            });
+
+            function changeSection(direction) {
+                const currentIndex = toc.selectedIndex;
+                const newIndex = currentIndex + direction;
+
+                if (newIndex >= 0 && newIndex < toc.options.length) {
+                    toc.selectedIndex = newIndex;
+                    const selectedSection = document.getElementById(toc.value);
+                    window.scrollTo({
+                        top: selectedSection.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

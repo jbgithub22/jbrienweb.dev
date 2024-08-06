@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slideshow with Fullscreen and Zoom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .figure-container {
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: auto;
+            display: none;
+            cursor: pointer;
+        }
+
+        .slideshow img.active {
+            display: block;
+        }
+
+        .figcaption {
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fullscreen img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="figure-container">
+        <figure class="slideshow">
+            <img src="https://via.placeholder.com/600" alt="Placeholder Image 1" class="active">
+            <img src="https://via.placeholder.com/1500" alt="Placeholder Image 2">
+            <img src="https://via.placeholder.com/2000" alt="Placeholder Image 3">
+            <figcaption class="figcaption">Fig 1: A placeholder image.</figcaption>
+            <div class="controls">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+        </figure>
+    </div>
+
+    <div class="fullscreen" id="fullscreen">
+        <img src="https://via.placeholder.com/600" alt="Placeholder Image" id="fullscreenImage">
+        <div class="controls">
+            <button id="prevFullscreen">&#10094;</button>
+            <button id="nextFullscreen">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slideshow img');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        const fullscreen = document.getElementById('fullscreen');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            fullscreenImage.src = slides[index].src;
+            currentIndex = index;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            showSlide((currentIndex + 1) % slides.length);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            showSlide((currentIndex - 1 + slides.length) % slides.length);
+        });
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                fullscreen.style.display = 'flex';
+                fullscreenImage.src = slide.src;
+                currentIndex = index;
+            });
+        });
+
+        fullscreen.addEventListener('click', () => {
+            fullscreen.style.display = 'none';
+        });
+
+        document.getElementById('nextFullscreen').addEventListener('click', (event) => {
+            event.stopPropagation();
+            showSlide((currentIndex + 1) % slides.length);
+        });
+
+        document.getElementById('prevFullscreen').addEventListener('click', (event) => {
+            event.stopPropagation();
+            showSlide((currentIndex - 1 + slides.length) % slides.length);
+        });
+
+        fullscreenImage.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            const scale = event.deltaY < 0 ? 1.1 : 0.9;
+            fullscreenImage.style.transform = `scale(${scale})`;
+        });
+
+        fullscreenImage.addEventListener('touchmove', (event) => {
+            event.preventDefault();
+            const touch = event.touches[0];
+            const scale = touch.force > 0.5 ? 1.1 : 0.9;
+            fullscreenImage.style.transform = `scale(${scale})`;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-like Article</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <section class="paper">
+        <div class="container">
+            <header>
+                <h1>Title of the Article</h1>
+                <p>Author Name · Date</p>
+            </header>
+            <article>
+                <h2 id="subheading1">Subheading 1</h2>
+                <p>This is a paragraph of text that looks like something you would find in a Medium article. It is
+                    well-spaced, easy to read, and keeps the reader engaged.</p>
+                <div class="figure-container">
+                    <figure class="slideshow">
+                        <img src="https://via.placeholder.com/600" alt="Placeholder Image 1" class="active">
+                        <img src="https://via.placeholder.com/1500" alt="Placeholder Image 2">
+                        <img src="https://via.placeholder.com/2000" alt="Placeholder Image 3">
+                        <figcaption class="figcaption">Fig 1: A placeholder image.</figcaption>
+                        <div class="controls">
+                            <button id="prev">&#10094;</button>
+                            <button id="next">&#10095;</button>
+                        </div>
+                    </figure>
+                </div>
+                <div class="fullscreen" id="fullscreen">
+                    <img src="https://via.placeholder.com/600" alt="Placeholder Image" id="fullscreenImage">
+                    <div class="controls">
+                        <button id="prevFullscreen">&#10094;</button>
+                        <button id="nextFullscreen">&#10095;</button>
+                    </div>
+                </div>
+                <h2 id="subheading2">Subheading 2</h2>
+                <p>Another paragraph of text with more information, stories, or data. You can add images, quotes, and
+                    other content to make the article more interesting.</p>
+                <div class="quote">
+                    "This is a quote that stands out from the rest of the text. It is styled differently to catch the
+                    reader's attention."
+                </div>
+                <h2 id="subheading3">Subheading 3</h2>
+                <p>More content goes here. You can write as much as you need, and the styling will keep it looking clean
+                    and readable.</p>
+                <div>
+                    <button class="toggle-button-code" onclick="toggleCodeContent('python-code')">Show/Hide
+                        Code</button>
+                    <div class="code-block">
+                        <div id="python-code" class="code-content">
+                            <code class="code-lines">
+                                hello_world <- function() {
+                                print("Hello, world!")
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="footer">
+                <p>Written by <a href="#">Author Name</a></p>
+                <p><a href="#">Back to top</a></p>
+            </div>
+        </div>
+        <div class="toc" id="toc">
+            <span class="toggle-button" id="toggle-button">
+                <h4 style="padding:0px; margin: 0px;">Table of Contents</h4>
+            </span>
+            <div class="toc-content">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#subheading1">Subheading 1</a></li>
+                    <li><a href="#subheading2">Subheading 2</a></li>
+                    <li><a href="#subheading3">Subheading 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium-like Article</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <section class="paper">
+        <div class="container">
+            <header>
+                <h1>Business Analytics and Machine Learning Prediction of a Coffee Vending Machine Sales Dataset</h1>
+                <p>JBrien Barcoma · Draft Ver.5 · 29 July 2024</p>
+            </header>
+            <article>
+                <h2 id="subheading1">1. Executive Summary</h2>
+                    <p>This analysis examines sales data from a coffee vending machine in Ukraine from March to June 2024, seeking to identify opportunities to minimize expenses and maximize profit. Key findings and recommendations include:</p>
+                    <ol>
+                        <li>Financial Performance:</li>
+                        <ul>
+                            <li>Initial investment: ₴236,000 UAH (Aprox. $5,760 USD)</li>
+                            <li>Monthly recurring costs: ₴11,000 UAH (Approx. $269 USD, excl. Cost of ingredients) </li>
+                            <li>Revenue trend: Overall positive, with fluctuations</li>
+                            <ul>
+                                <li>March: ₴7,100 UAH</li>
+                                <li>April: 	 ₴6,700 UAH – Decreased 5% </li>
+                                <li>May: 	 ₴9,100 UAH – Increased 26% following price cut  </li>
+                                <li>June: 	 ₴7,800 UAH – Decreased 16%</li>
+                            </ul>
+                        </ul>
+                        <li>Pricing Strategy:</li>
+                        <ul>
+                            <li>A price cut implemented in May led to a substantial revenue increase</li>
+                            <li>Recommendation: Consider strategic, periodic discounts to boost sales</li>
+                        </ul>
+                        <li>Product Mix:</li>
+                        <ul>
+                            <li>Most profitable drink is Latte, followed by Capuccino and Americano with Milk.</li>
+                            <li>Recommendation: Focus marketing efforts on drinks with milk as an ingredient.</li>
+                        </ul>
+                        <li>Customer Behaviour:</li>
+                        <ul>
+                            <li>Peak sales times: 10am and 7pm on Weekdays (Start of work and over-time), 12noon on Saturdays.</li>
+                            <li>Payment preferences: 90% of transactions made with cards, 10% with cash.</li>
+                            <li>Customer: 14% of all transactions are done by 2 customers.</li>
+                            <li>Recommendation: Optimize the vending machine’s tsock and maintenance schedule to align with peak usage times, and to implement a digital loyalty program to reward frequent users and to decrease churn.</li>
+                        </ul>
+                        <li>Future Outlook:</li>
+                        <ul>
+                            <li>Financial Trajectory: The business is currently operating at a loss. </li>
+                            <li>Price cut improved revenue, leading to a narrowing of losses over the months.</li>
+                            <li>Current numer of months is insufficient to reliably predict break-even point.</li>
+                            <li>May require significant work in terms of formulating pricing strategies, marketing and adverts to increase sales and make businss profitable.</li>
+                        </ul>
+                    </ol>
+                                       
+
+
+                <h2 id="subheading2">2. Introduction</h2>
+                    <p>This article presents a comprehensive analysis of sales data from a coffee vending machine  in Ukraine, covering the period from March to June 2024. By leveraging business analytics and machine learning techniques, we aim to uncover valuable insights that can drive operational improvements and increase profitability. </p>
+
+                    <h3 id="sub2heading3">2.1. Motivation</h3>
+                    <p>This article seeks to have a deep understanding of customer preferences, pricing strategies, and operational efficiencies to minimize expenses and maximize profit. With the use of advanced data analytics, we ultimately aim to transforming a simple vending machine into a highly optimized and profitable business venture. </p>
+                    <h3 id="sub2heading3">2.2. Problem Statement</h3>
+                    <p>Having data on the transactions made with the vending machine gives the business owner the following opportunities to improve the business:</p>
+                    <ol>
+                        <li>Optimizing pricing strategies to balance profitability with customer attraction and retention.</li>
+                        <li>Understanding and catering to customer preferences in terms of product mix and timing.</li>
+                        <li>Identifying patterns in sales data to inform inventory management and maintenance schedules.</li>
+                        <li>Assessing the impact of external factors such as seasonality or local events on sales performance.</li>
+                        <li>Determining the most effective payment methods to offer customers.</li>
+                    </ol>
+                    <p>This analysis aims to turn the above opportunities into profit by answering key questions such as:</p>
+                    <ul>
+                        <li>What are the most popular coffee types and at what times?</li>
+                        <li>How do pricing changes affect overall revenue and customer behavior? </li>
+                        <li>Are there identifiable patterns in daily or hourly sales that can inform operational decisions? </li>
+                        <li>What is the current profitability of the operation, and how can it be improved? </li>
+                        <li>Can we predict future sales trends to inform business planning? </li>
+                    </ul>
+                    <p>By answering these questions we can obtain actionable insights that can drive measurable improvements in the coffee vending machine's performance and profitability.</p>
+
+                <h2 id="subheading3">3. Dataset Overview</h2>
+                    <h3 id="sub2heading3">3.1. Data Source and Description</h3>
+                    <p>The primary dataset for this analysis is obtained from Kaggle and contains transactional data from a coffee vending machine located in Ukraine. The data spans four months from March 2024 to June 2024, with monthly updates. The dataset comprises 896 rows and 6 columns, each representing a distinct transaction.</p>
+                    <p>The dataset includes the following attributes:</p>
+                    <img src="./assets/images/1_datatypes.png" alt="Fig 1: Table of Dataset Column Attributes">
+                    <img src="./assets/images/1_df-head.png" alt="Fig 2: Python df.head(5) output of the top 5 rows of the dataset">
+                    <div>
+                        <button class="toggle-button-code" onclick="toggleCodeContent('python-code')">Show/Hide
+                            Code</button>
+                        <div class="code-block">
+                            <div id="python-code" class="code-content">
+                                <code class="code-lines">
+                                        hello_world <- function() {
+                                        print("Hello, world!")
+                                        }
+                                    </code>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="sub2heading3">3.2. Data Quality Assessment</h3>
+                    <p>To ensure the reliability of our analysis, a thorough data quality assessment was conducted. The following aspects were evaluated: (link references to visualizations in appendox showing the below was done.)</p>
+                    <ol>
+                        <li>Completeness: We verified that there were no missing values in any of the columns, save for when the card number is null for when the transaction utilized cash. 1</li>
+                        <li>Consistency: Date and datetime fields were cross-checked to ensure consistency. No discrepancies were found between these two fields. 2</li>
+                        <li>Accuracy: The money field was examined for any anomalous values. All amounts were found to be within a reasonable range for coffee purchases. 3</li>
+                        <li>Uniqueness: While individual transactions were not assigned unique identifiers, the combination of datetime and card number (for card transactions) provided a reliable way to distinguish between transactions.</li>
+                        <li>Timeliness: The dataset is updated monthly, ensuring that it remains current for ongoing analysis. </li>
+                        <li>Validity: All categorical variables (cash_type, card, coffee_name) contained valid entries corresponding to expected categories. 5</li>
+                    </ol>
+                    <p>The dataset was found to be of high quality, requiring minimal cleaning or preprocessing. </p>
+                    <p>The main limitation identified was the relatively short time span of four months, which may limit the ability to detect long-term trends or seasonality effects. The lack of geographical or demographic information about customers restricts certain types of analyses.</p>
+                    <p>Despite these limitations, the dataset provides enough information for deriving meaningful insights into the operation of the coffee vending machine business.</p>
+
+                <h2 id="subheading3">4. Methodology</h2>
+                <p>This section outlines the technical approach used to process, analyze, and derive insights from the coffee vending machine dataset. We detail the data pipeline, tools employed, and the analytical methods applied to extract meaningful business intelligence. </p>
+                    <h3 id="sub2heading3">4.1. Data Pipeline and Tools</h3>
+                    <p>The pipeline consists of the following stages:</p>
+                    <ol>
+                        <li>Data Ingestion: The raw dataset was imported into a MySQL server relational database management system (RDBMS). This step leverages on the common availability of SQL as a skill in the data anlytics industry. 6</li>
+                        <li>Extract, Transform, Load (ETL): The ETL process was divided between PowerBI and MySQL server. MySQL was used for initial data structuring and basic transformations, while PowerBI handled more complex transformations and feature engineering. 7</li>
+                        <li>Data Analysis and Visualization (Part 1, this document): PowerBI served as the primary tool for data analytics and visualization. Its user-friendly interface and powerful analytical capabilities made it ideal for exploring the dataset and creating insightful visualizations. </li>
+                        <li>Machine Learning Predictions (Part 2): For more advanced predictive analytics, we utilized Python in a Jupyter notebook environment. This allowed us to leverage powerful machine learning libraries such as scikit-learn and pandas for sophisticated data modeling.</li>
+                    </ol>
+                    <p>This approach focusing on no-code workflows for the data anlytics allows for quick processing of data. Uploading all data into the MySQL server ensures that data is all located centrally, as opposed to loading the files directly onto PowerBI where the source files may be scattered throughout the drive. A limitation of this process is the lack of automation in data ingestion, where python coding and tools such as Apache Airflow may be used to automatically download the updated files with the next months transaction from kaggle.</p>
+                    <h3 id="sub2heading3">4.2. Analytics Approach</h3>
+                    <p>Our analytical approach was structured to address key business questions and extract actionable insights from the data. The analysis was conducted in several stages:</p>
+                    <ol>
+                        <li>Exploratory Data Analysis (EDA): To examine distributions, identify basic patterns, and calculate summary statistics which will inform subsequent more advanced anlysis.</li>
+                        <li>Time Series Analysis: To identify trends, seasonality, and potential cyclical patterns in sales. </li>
+                        <li>Customer Segmentation: We analyze customer behavior to segment customers based on factors such as purchase frequency, preferred coffee types, and payment methods. </li>
+                        <li>Pricing Analysis: To examine the impact of pricing changes on sales volume and revenue, with particular attention to the price cut implemented in May 2024. </li>
+                        <li>Product Mix Analysis: To evaluate the popularity and profitability of different coffee types to optimize the product offering. </li>
+                        <li>Operational Efficiency Analysis: To examining temporal patterns in sales, aiming to identify opportunities for optimizing restocking schedules and maintenance timing. </li>
+                        <li>Predictive Modeling (Part 2): To use machine learning techniques in developing models to forecast future sales trends and predict customer behavior. </li>
+                    </ol>
+                    <p>This approach identifies patterns in the data providing a comprehensive understanding of the coffee vending machine's performance as well as translates these findings into practical, actionable recommendations, identifying potential areas for improvement to improve the coffee vending machine business.</p>
+
+                <h2 id="subheading3">5. Business Performance Analysis</h2>
+                <p>This section focuses on evaluating the financial aspects of the coffee vending machine business, including initial costs, revenue patterns, pricing strategies, product performance, and overall profitability. </p>
+                    <h3 id="sub2heading3">5.1. Initial Investment and Recurring Costs</h3>
+                    <p>We estimate the initial capital investment for the coffee vending machine business to be $5,760, which includes the cost of the machine, installation, and initial stock. Our analysis also identifies recurring monthly costs of approximately $269, encompassing rent, maintenance, utilities, and other operational expenses. These figures provide a baseline for assessing the business's financial performance and calculating the break-even point. </p>
+                    <h3 id="sub2heading3">5.2. Coffee Sale Price</h3>
+                    <p>Estimates were made on the cost price of each drink in the menu. Subtracting the cost price from the sale price gives us the profit margin set for each drink.</p>
+                    <p>Our analysis includes a price matrix that provides a quick overview of selling prices across different months. This visualization reveals a significant price reduction implemented between April and May 2024. Of particular interest is the impact of this price cut on sales volume. </p>
+                    <h3 id="sub2heading3">5.3. Revenue Trends</h3>
+                    <p>Our examination of revenue trends reveals a generally positive trajectory over the four-month period. The business started with a revenue of UAH 7,100 in March 2024. While there is a slight decrease in April, we observe a significant jump in May, followed by a minor decline in June. This pattern suggests a growing customer base, but also indicates potential external factors influencing sales, which we further investigate in our seasonality analysis. </p>
+                    <p>Key Insights/Next Steps: The price cut coincides with the observed spike in revenue. Our analysis suggests a strong correlation between the price reduction and increased sales volume, indicating high price elasticity of demand for the vending machine's products. However, we also note that this strategy's long-term sustainability needs further evaluation. </p>
+                    <h3 id="sub2heading3">5.4. Product Mix Analysis</h3>
+                    <p>We conduct a detailed analysis of the product mix to identify the most popular and profitable coffee types. Our findings show that Latte and other drinks with milk added are consistently the best-selling items. However, when considering profit margins, we find that [insert high-margin coffee types] contribute most significantly to overall profitability. This analysis provides valuable insights for inventory management and potential menu optimization. </p>
+                    <h3 id="sub2heading3">5.5. Profitability Assessment</h3>
+                    <p>Our comprehensive profitability assessment takes into account the initial investment, recurring costs, revenue trends, and product-specific profit margins. We calculate that the business is operating at a [profit/loss] since its inception. The break-even point, based on current trends, is projected to occur in [insert estimated date]. Furthermore, we identify that the gross profit margin averages [insert percentage], with variations across different product types and months.</p>
+                    <p>This profitability analysis provides a clear picture of the business's financial health and highlights areas where improvements could potentially increase overall profitability. These insights form the basis for our recommendations on pricing strategies, product focus, and operational efficiencies.</p>
+
+                <h2 id="subheading3">6. Customer Behaviour Insights</h2>
+                <p>This section delves into the patterns and preferences exhibited by customers of the coffee vending machine, providing valuable insights for targeted marketing and operational optimization. </p>
+                    <h3 id="sub2heading3">6.1. Customer Segmentation</h3>
+                    <h3 id="sub2heading3">6.2. Temporal Patterns (Daily and Hourly)</h3>
+                    <h3 id="sub3heading3">6.2.1. Weekly Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.2. Daily Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.3. Hourly Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.4. Key Insights and Next Steps</h3>
+                    <h3 id="sub2heading3">6.3. Payment Method Preferences</h3>
+
+                <h2 id="subheading3">7. Advanced Analytics</h2>
+                    <h3 id="sub2heading3">7.1. Seasonaliy and External Factors</h3>
+
+                <h2 id="subheading3">8. Key Findings and Recommendations</h2>
+                    <h3 id="sub2heading3">8.1. Summary of Insights</h3>
+                    <h3 id="sub2heading3">8.2. Actionable Recommendations</h3>
+                    <h3 id="sub2heading3">8.3. Limitations</h3>
+                    <h3 id="sub2heading3">8.4. Future Work</h3>
+
+                <h2 id="subheading3">9. PowerBI Dashboard</h2>
+
+                <h2 id="subheading3">10. Conclusion</h2>
+
+                <h2 id="subheading3">11. Appendices</h2>
+                    <h3 id="sub2heading3">11.1. Data Processing Details</h3>
+                    <h3 id="sub2heading3">11.2. Feature Engineering Details</h3>
+                    <h3 id="sub2heading3">11.3. Additional Visualizations</h3>
+                    <h3 id="sub2heading3">11.4. Use of Large Language Models</h3>
+                    <h3 id="sub2heading3">11.5. References</h3>
+
+
+            </article>
+            <div class="footer">
+                <p>Written by <a href="#">Author Name</a></p>
+                <p><a href="#">Back to top</a></p>
+            </div>
+        </div>
+        <div class="toc" id="toc">
+            <span class="toggle-button" id="toggle-button">
+                <h4 style="padding:0px; margin: 0px;">Table of Contents</h4>
+            </span>
+            <div class="toc-content">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#subheading1">Subheading 1</a></li>
+                    <li><a href="#subheading2">Subheading 2</a></li>
+                    <li><a href="#subheading3">Subheading 3</a></li>
+                    <li><a href="">1. Executive Summary</a></li>
+                    <li><a href="">2. Introduction</a></li>
+                        <li><a href="">1. Motivation</a></li>
+                        <li><a href="">2. Problem Statement</a></li>
+                    <li><a href="">3. Dataset Overview</a></li>
+                        <li><a href="">1. Data Source and Description</a></li>
+                        <li><a href="">2. Data Quality Assessment</a></li>
+                    <li><a href="">4. Methodology</a></li>
+                        <li><a href="">1. Data Pipeline and Tools</a></li>
+                        <li><a href="">2. Analytics Approach</a></li>
+                    <li><a href="">5. Business Performance Analysis</a></li>
+                        <li><a href="">1. Initial Investment and Recurring Costs</a></li>
+                        <li><a href="">2. Coffee Sale Price</a></li>
+                        <li><a href="">3. Revenue Trends</a></li>
+                        <li><a href="">4. Product Mix Analysis</a></li>
+                        <li><a href="">5. Profitability Assessment</a></li>
+                    <li><a href="">6. Customer Behaviour Insights</a></li>
+                        <li><a href="">1. Card vs Card Payment</a></li>
+                        <li><a href="">2. New vs Returning Customers</a></li>
+                        <li><a href="">3. Top 10 Card Customers</a></li>
+                        <li><a href="">4. Top Card Customer</a></li>
+                        <li><a href="">5. Monthly, Weekly, Daily and Hourly Temporal Patterns</a></li>
+                    <li><a href="">7. Key Findings and Recommendations</a></li>
+                        <li><a href="">1. Summary of Insights</a></li>
+                        <li><a href="">2. Actionable Recommendations</a></li>
+                        <li><a href="">3. Limitations</a></li>
+                        <li><a href="">4. Future Work</a></li>
+                    <li><a href="">8. PowerBI Dashboard (to be updated)</a></li>
+                    <li><a href="">9. Conclusion</a></li>
+                    <li><a href="">10. Appendices</a></li>
+                        <li><a href="">1. Use of Large Language Models</a></li>
+                        <li><a href="">2. References and Reference Methods</a></li>
+                </ul>
+            </div>
+            <!-- <div>
+                <h2 id="subheading3">5. Business Performance Analysis</h2>
+                    <h3 id="sub2heading3">5.1. Initial Investment and Recurring Costs</h3>
+                    <h3 id="sub2heading3">5.2. Coffee Sale Price</h3>
+                    <h3 id="sub2heading3">5.3. Revenue Trends</h3>
+                    <h3 id="sub2heading3">5.4. Product Mix Analysics</h3>
+                    <h3 id="sub2heading3">5.5. Profitability Assessment</h3>
+
+                <h2 id="subheading3">6. Customer Behaviour Insights</h2>
+                    <h3 id="sub2heading3">6.1. Customer Segmentation</h3>
+                    <h3 id="sub2heading3">6.2. Temporal Patterns (Daily and Hourly)</h3>
+                    <h3 id="sub3heading3">6.2.1. Weekly Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.2. Daily Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.3. Hourly Sales Breakdown</h3>
+                    <h3 id="sub3heading3">6.2.4. Key Insights and Next Steps</h3>
+                    <h3 id="sub2heading3">6.3. Payment Method Preferences</h3>
+
+                <h2 id="subheading3">7. Advanced Analytics</h2>
+                    <h3 id="sub2heading3">7.1. Seasonaliy and External Factors</h3>
+
+                <h2 id="subheading3">8. Key Findings and Recommendations</h2>
+                    <h3 id="sub2heading3">8.1. Summary of Insights</h3>
+                    <h3 id="sub2heading3">8.2. Actionable Recommendations</h3>
+                    <h3 id="sub2heading3">8.3. Limitations</h3>
+                    <h3 id="sub2heading3">8.4. Future Work</h3>
+
+                <h2 id="subheading3">9. PowerBI Dashboard</h2>
+
+                <h2 id="subheading3">10. Conclusion</h2>
+
+                <h2 id="subheading3">11. Appendices</h2>
+                    <h3 id="sub2heading3">11.1. Data Processing Details</h3>
+                    <h3 id="sub2heading3">11.2. Feature Engineering Details</h3>
+                    <h3 id="sub2heading3">11.3. Additional Visualizations</h3>
+                    <h3 id="sub2heading3">11.4. Use of Large Language Models</h3>
+                    <h3 id="sub2heading3">11.5. References</h3>
+
+                <div class="quote">
+                    "This is a quote that stands out from the rest of the text. It is styled differently to catch the
+                    reader's attention."
+                </div>
+
+                <div class="figure-container">
+                    <figure class="slideshow">
+                        <img src="https://via.placeholder.com/600" alt="Placeholder Image 1" class="active">
+                        <img src="https://via.placeholder.com/1500" alt="Placeholder Image 2">
+                        <img src="https://via.placeholder.com/2000" alt="Placeholder Image 3">
+                        <figcaption class="figcaption">Fig 1: A placeholder image.</figcaption>
+                        <div class="controls">
+                            <button id="prev">&#10094;</button>
+                            <button id="next">&#10095;</button>
+                        </div>
+                    </figure>
+                </div>
+                <div class="fullscreen" id="fullscreen">
+                    <img src="https://via.placeholder.com/600" alt="Placeholder Image" id="fullscreenImage">
+                    <div class="controls">
+                        <button id="prevFullscreen">&#10094;</button>
+                        <button id="nextFullscreen">&#10095;</button>
+                    </div>
+                </div>
+
+            </div> -->
+            <div>
+                <img src="./assets/images/" alt="Placeholder Image 3">
+                <img src="./assets/images/1_pricebreakdown.png" alt="Placeholder Image 3">
+                <img src="./assets/images/2_pricecashcard.png" alt="Placeholder Image 3">
+                <img src="./assets/images/3_coffeepricetable.png" alt="Placeholder Image 3">
+                <img src="./assets/images/4_revenue.png" alt="Placeholder Image 3">
+                <img src="./assets/images/5_productranking.png" alt="Placeholder Image 3">
+                <img src="./assets/images/6_productprofitranking.png" alt="Placeholder Image 3">
+                <img src="./assets/images/7_profitpercoffee.png" alt="Placeholder Image 3">
+                <img src="./assets/images/8_cashvscard.png" alt="Placeholder Image 3">
+                <img src="./assets/images/9_cashvscardmonth.png" alt="Placeholder Image 3">
+                <img src="./assets/images/10_customers.png" alt="Placeholder Image 3">
+                <img src="./assets/images/11_cardtop10.png" alt="Placeholder Image 3">
+                <img src="./assets/images/12_cardtopspender.png" alt="Placeholder Image 3">
+                <img src="./assets/images/13_totalsalesweek.png" alt="Placeholder Image 3">
+                <img src="./assets/images/14_avgsalesweek.png" alt="Placeholder Image 3">
+                <img src="./assets/images/15_totalsaleshour.png" alt="Placeholder Image 3">
+                <img src="./assets/images/16_avgsaleshour.png" alt="Placeholder Image 3">
+                <img src="./assets/images/17_totalalesmonth.png" alt="Placeholder Image 3">
+                <img src="./assets/images/18_avgsalesmonth.png" alt="Placeholder Image 3">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

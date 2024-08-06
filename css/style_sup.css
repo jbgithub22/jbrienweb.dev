@@ -1,3 +1,9 @@
+h4 {
+    margin: 0px;
+    padding: 0px;
+}
+
+
 body {
     display: grid;
     width: 100%;
@@ -14,15 +20,16 @@ body {
     color: white;
     background-color: #5f2f2f;
     background-image:
-        radial-gradient(ellipse at 10% 90%, #5645ad 0%, transparent 55%),
-        radial-gradient(ellipse at 90% 90%, #c33c65 0%, transparent 55%),
-        radial-gradient(ellipse at 90% 10%, #4a74dc 0%, transparent 55%),
-        radial-gradient(ellipse at 10% 10%, #35244f 0%, transparent 55%);
+      radial-gradient(ellipse at 10% 90%, #5645ad 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 90%, #c33c65 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 10%, #4a74dc 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 10%, #35244f 0%, transparent 55%);
 }
 
 a:link {
     color: white;
 }
+
 
 .header {
     grid-area: header;
@@ -31,8 +38,14 @@ a:link {
     display: flex;
     justify-content: center;
     align-items: center;
+    /*
+    background-image: url('../bg_image/bg_image.jpg');
+    background-size: cover;
+    background-position: center;
+    */
 }
 
+/*<a href="https://www.vecteezy.com/free-vector/website-header">Website Header Vectors by Vecteezy</a> */
 .menu {
     grid-area: menu;
     padding: 0px;
@@ -43,7 +56,7 @@ a:link {
 }
 
 .glass {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255,255,255,0.06);
     backdrop-filter: blur(10px);
 }
 
@@ -53,12 +66,12 @@ a:link {
 }
 
 .glass-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+    background-color: rgba(255,255,255,0.2);
+  }
 
 @media only screen and (min-width: 601px) {
     .menu-toggle {
-        display: none;
+        display: none; /* Hide the hamburger icon on larger screens */
     }
 
     .topnav a {
@@ -66,7 +79,7 @@ a:link {
         padding: 10px 10px;
         border: 0;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255,255,255,0.8);
         font-size: 14px;
         letter-spacing: 2px;
         cursor: pointer;
@@ -74,22 +87,11 @@ a:link {
     }
 
     .nav-container {
-        display: block;
+        display: block; /* Ensure the navigation links are initially visible on larger screens */
     }
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-        grid-template-areas:
-            "header"
-            "menu"
-            "about"
-            "projects"
-            "updates"
-            "portfolios"
-            "footer";
-    }
-
     .main {
         padding: 10px;
     }
@@ -103,7 +105,7 @@ a:link {
     }
 
     .topnav {
-        display: none;
+        display: none; 
         flex-direction: column;
         align-items: center;
     }
@@ -121,20 +123,11 @@ a:link {
     }
 
     .topnav a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255,255,255,0.2);
     }
 
     .nav-container {
-        display: block;
-    }
-
-    .about,
-    .projects,
-    .portfolios,
-    .updates,
-    .footer {
-        padding: 20px 10px;
-        max-width: 100%;
+        display: block; /* Hide the navigation links container initially on small screens */
     }
 }
 
@@ -149,44 +142,45 @@ a:link {
     border-radius: 10px;
 }
 
-.about-me-content {
-    max-width: 450px;
-    flex: 1;
-    padding-right: 20px;
-}
+    .about-me-content {
+        max-width: 450px;
+        flex: 1;
+        padding-right: 20px;
+    }
 
-.about-me-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+    .about-me-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
 
-.about-me-content p {
-    font-size: 16px;
-    line-height: 1.6;
-}
+    .about-me-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
 
-.about-me-photo {
-    width: 200px;
-    height: auto;
-}
+    .about-me-photo {
+        width: 200px;
+        height: auto;
+    }
 
-.about-me-photo img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+    .about-me-photo img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
 
 .projects {
     grid-area: projects;
-    padding: 150px 50px;
+    padding: 150px 50px 150px 50px;
     max-width: 600px;
     margin: auto;
     text-align: center;
+    
 }
 
 .portfolios {
     grid-area: portfolios;
-    padding: 150px 50px;
+    padding: 150px 50px 150px 50px;
     max-width: 600px;
     margin: auto;
     text-align: center;
@@ -194,7 +188,7 @@ a:link {
 
 .updates {
     grid-area: updates;
-    padding: 150px 50px;
+    padding: 150px 50px 150px 50px;
     max-width: 600px;
     margin: auto;
     text-align: center;
@@ -202,7 +196,7 @@ a:link {
 
 .footer {
     grid-area: footer;
-    padding: 150px 50px;
+    padding: 150px 50px 150px 50px;
     max-width: 600px;
     margin: auto;
     justify-content: center;
@@ -226,8 +220,8 @@ a:link {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -284,24 +278,29 @@ a:link {
     padding: 0px 20px;
 }
 
+
 .title {
     text-align: center;
 }
 
+/* Icons */
+
 .icon {
     padding: 5px;
     height: 200px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255,255,255,0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    margin: 5px;
+    margin: 5px; /* Added margin for spacing between icons */
+
     flex: 1;
     transition: flex 0.4s ease-in-out;
+
     cursor: pointer;
 }
 
@@ -317,8 +316,16 @@ a:link {
     flex: 5;
 }
 
-.projects .subContainer,
-.portfolios .subContainer,
+/* Grid Cotnainers */
+
+.projects .subContainer {
+    display: flex;
+}
+
+.portfolios .subContainer {
+    display: flex;
+}
+
 .updates .subContainer {
     display: flex;
 }
