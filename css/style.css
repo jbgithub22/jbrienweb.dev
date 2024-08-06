@@ -78,7 +78,10 @@ a:link {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
 }
 
 .dropdown:hover .dropbtn {
@@ -93,7 +96,6 @@ a:link {
     .topnav {
         display: flex;
         flex-direction: row;
-        /* Ensure menu items are in a row on desktop */
         align-items: center;
     }
 
