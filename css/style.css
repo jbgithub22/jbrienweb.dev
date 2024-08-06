@@ -38,8 +38,8 @@ a:link {
     padding: 0px;
     text-align: center;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    position: relative;
 }
 
 .glass {
@@ -62,6 +62,8 @@ a:link {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    flex-direction: column;
+    /* Ensure sub-buttons appear in a column */
 }
 
 .dropdown-content a {
@@ -77,7 +79,6 @@ a:link {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    max-width: 100px;
 }
 
 .dropdown:hover .dropbtn {
@@ -92,8 +93,8 @@ a:link {
     .topnav {
         display: flex;
         flex-direction: row;
+        /* Ensure menu items are in a row on desktop */
         align-items: center;
-        padding: 10px 0;
     }
 
     .topnav a {
@@ -109,26 +110,45 @@ a:link {
     }
 
     .nav-container {
-        display: block;
+        display: flex;
     }
 }
 
 @media only screen and (max-width: 600px) {
+    .main {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
     .menu-toggle {
         display: block;
-        cursor: pointer;
-        font-size: 30px;
         color: white;
-        background: none;
+        width: 200px;
+        background-color: rgba(255, 255, 255, 0.06);
+        /* Glass aesthetic */
+        backdrop-filter: blur(10px);
+        /* Glass aesthetic */
         border: none;
-        outline: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
     }
 
     .topnav {
         display: none;
         flex-direction: column;
         align-items: center;
+    }
+
+    .topnav.active {
+        display: flex;
+        padding-top: 10px;
         width: 100%;
+        justify-content: center;
+        /* Center the menu */
     }
 
     .topnav a {
@@ -136,8 +156,11 @@ a:link {
         width: 90%;
         padding: 10px;
         text-decoration: none;
-        color: #333;
-        background-color: #eee;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.06);
+        /* Glass aesthetic */
+        backdrop-filter: blur(10px);
+        /* Glass aesthetic */
         margin-bottom: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -148,11 +171,7 @@ a:link {
     }
 
     .nav-container {
-        width: 100%;
-    }
-
-    .menu-toggle.active+.nav-container .topnav {
-        display: flex;
+        display: block;
     }
 }
 
@@ -313,4 +332,5 @@ a:link {
 .updates .subContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: center;
+}
