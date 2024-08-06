@@ -5,6 +5,11 @@ document.querySelector('.menu-toggle').addEventListener('click', function () {
   document.querySelector('.topnav').classList.toggle('active');
 });
 
+document.querySelector('.dropdown').addEventListener('click', function () {
+  this.classList.toggle('active');
+  document.querySelector('.dropdown-content').classList.toggle('active');
+});
+
 
 /* Collapsing Icons/Divs */
 

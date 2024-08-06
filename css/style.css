@@ -63,7 +63,6 @@ a:link {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
-    /* Ensure sub-buttons appear in a column */
 }
 
 .dropdown-content a {
@@ -73,20 +72,6 @@ a:link {
     display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    margin: 0px;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgba(255, 255, 255, 0.2);
-}
 
 @media only screen and (min-width: 601px) {
     .menu-toggle {
@@ -114,7 +99,28 @@ a:link {
     .nav-container {
         display: flex;
     }
+
+    .dropdown {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 }
+
 
 @media only screen and (max-width: 600px) {
     .main {
@@ -130,9 +136,7 @@ a:link {
         color: white;
         width: 200px;
         background-color: rgba(255, 255, 255, 0.06);
-        /* Glass aesthetic */
         backdrop-filter: blur(10px);
-        /* Glass aesthetic */
         border: none;
         padding: 10px 20px;
         font-size: 16px;
@@ -150,22 +154,27 @@ a:link {
         padding-top: 10px;
         width: 100%;
         justify-content: center;
-        /* Center the menu */
     }
 
-    .topnav a {
+    .topnav div {
         display: block;
         width: 90%;
         padding: 10px;
-        text-decoration: none;
         color: white;
         background-color: rgba(255, 255, 255, 0.06);
-        /* Glass aesthetic */
         backdrop-filter: blur(10px);
-        /* Glass aesthetic */
         margin-bottom: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .topnav div div {
+        display: none;
     }
 
     .topnav a:hover {
@@ -174,6 +183,13 @@ a:link {
 
     .nav-container {
         display: block;
+    }
+
+    .dropdown-content.active {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 20px 0px;
     }
 }
 
