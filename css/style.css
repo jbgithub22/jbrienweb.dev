@@ -24,6 +24,10 @@ a:link {
     color: white;
 }
 
+a:visited {
+    color: gray
+}
+
 .header {
     grid-area: header;
     padding: 150px 0px;
