@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Expanding Div Test Page</title>
+      <style>
+            /* Basic CSS Reset */
+            * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+            }
+            body {
+                  font-family: Arial, sans-serif;
+            }
+            .container {
+                  display: flex;
+                  gap: 10px;
+                  margin: 50px;
+            }
+            .panel {
+                  background-color: lightblue;
+                  width: 150px;
+                  height: 300px;
+                  flex: 1;
+                  transition: flex 0.4s ease-in-out;
+                  position: relative;
+                  overflow: hidden;
+            }
+            .panel.active {
+                  flex: 5;
+            }
+            .panel img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  filter: blur(5px) brightness(0.7);
+                  transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
+            }
+            .panel.active img {
+                  filter: blur(2px) brightness(1);
+                  transform: scale(1.1);
+            }
+            .panel .text {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  color: white;
+                  font-size: 20px;
+                  font-weight: bold;
+                  text-align: center;
+                  z-index: 1;
+                  pointer-events: none; /* Prevent interaction with the text */
+                  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            }
+      </style>
+</head>
+<body>
+      <section>
+            <div class="header">
+                  <h1>Expanding Div Test Page</h1>
+                  <p>https://www.youtube.com/watch?v=p_2ByC1BJaU</p>
+            </div>
+      </section>
+      <section class="topic">
+            <div class="container">
+                  <div class="panel">
+                        <div class="text">PanelPanel 1</div>
+                        <img src="https://via.placeholder.com/300x600" alt="Placeholder Image 1">
+                  </div>
+                  <div class="panel">
+                        <div class="text">PanelPanel 2</div>
+                        <img src="https://via.placeholder.com/300x600" alt="Placeholder Image 2">
+                  </div>
+                  <div class="panel">
+                        <div class="text">PanelPanel 3</div>
+                        <img src="https://via.placeholder.com/300x600" alt="Placeholder Image 3">
+                  </div>
+                  <div class="panel">
+                        <div class="text">PanelPanel 4</div>
+                        <img src="https://via.placeholder.com/300x600" alt="Placeholder Image 4">
+                  </div>
+                  <div class="panel">
+                        <div class="text">PanelPanel 5</div>
+                        <img src="https://via.placeholder.com/300x600" alt="Placeholder Image 5">
+                  </div>
+            </div>
+      </section>
+      <script>
+            const panels = document.querySelectorAll(".panel");
+            panels.forEach((panel) => {
+                  panel.addEventListener("mouseover", () => {
+                        removeActiveClasses();
+                        panel.classList.add("active");
+                  });
+                  panel.addEventListener("mouseleave", () => {
+                        removeActiveClasses();
+                  });
+            });
+            const removeActiveClasses = () => {
+                  panels.forEach((panel) => {
+                        panel.classList.remove("active");
+                  });
+            };
+      </script>
+</body>
+</html>
